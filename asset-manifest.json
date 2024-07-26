@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/verbatim/static/css/main.0d121267.css",
-    "main.js": "/verbatim/static/js/main.64167bd4.js",
+    "main.css": "/verbatim/static/css/main.d335d075.css",
+    "main.js": "/verbatim/static/js/main.1fb8b8b1.js",
     "static/media/Outfit-VariableFont_wght.ttf": "/verbatim/static/media/Outfit-VariableFont_wght.00c2ed1a3bf798b0da27.ttf",
     "static/media/KeaniaOne-Regular.ttf": "/verbatim/static/media/KeaniaOne-Regular.61aeb697b2632c95517a.ttf",
     "index.html": "/verbatim/index.html",
-    "main.0d121267.css.map": "/verbatim/static/css/main.0d121267.css.map",
-    "main.64167bd4.js.map": "/verbatim/static/js/main.64167bd4.js.map"
+    "main.d335d075.css.map": "/verbatim/static/css/main.d335d075.css.map",
+    "main.1fb8b8b1.js.map": "/verbatim/static/js/main.1fb8b8b1.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d121267.css",
-    "static/js/main.64167bd4.js"
+    "static/css/main.d335d075.css",
+    "static/js/main.1fb8b8b1.js"
   ]
 }
