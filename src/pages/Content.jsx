@@ -7,6 +7,7 @@ const Content = () => {
   const navigate = useNavigate();
   const maxWords = 20
   const [status, setStatus] = useState("initial")
+  const [statusHelp,setStatusHelp] = useState(false)
   const [words, setWords] = useState([]);
   const [wordId, setWordId] = useState(0);
   const [inputWord, setInputWord] = useState("");
@@ -38,10 +39,11 @@ const Content = () => {
   }
 
   const check = () => {
-    if(words[wordId].translate === inputWord){
+    if((words[wordId].translate).toLowerCase() === inputWord.toLowerCase()){
       if(wordId !== maxWords - 1){
         setWordId((prev) => prev + 1);
-        setInputWord("")
+        setInputWord(() => "")
+        setStatusHelp(() => 0)
       }else{
         alert("Вы прошли тест!")
         navigate("/verbatim")
@@ -52,7 +54,9 @@ const Content = () => {
   return (
   <div className="app">
     <Header/>
-    <div className="content container flex">
+    <form action="/content" onSubmit={(e) => {
+      e.preventDefault()
+    }} className="content container flex">
       {status ===
       "initial" ?
         <div className="content-inner flex">
@@ -63,11 +67,20 @@ const Content = () => {
       "started" ?
         <div className="content-inner flex">
           <h2 className="content__title">{words[wordId].word}</h2>
-          <input className="content__input" type="text" placeholder="Перевод" value={inputWord} onChange={(e) => setInputWord(e.target.value)} />
+          <input className="content__input" type="text" placeholder="Перевод" value={inputWord}
+                 onChange={(e) => setInputWord(e.target.value)}/>
+          {statusHelp === 1
+            ? <div className="content__btn help flex">
+              <h2>{words[wordId].help}</h2>
+              <div onClick={() => setStatusHelp(() => 2)}><span>Ответ</span></div>
+          </div>
+            : statusHelp === 2 ? <div className="content__btn help">
+              <h2>{words[wordId].translate}</h2>
+            </div>  : <div className="content__btn help" onClick={() => setStatusHelp(() => 1)}><span>Подсказка</span></div>}
           <button className="content__btn" onClick={() => check()}>Проверить</button>
         </div> :
         <span>finish</span>}
-    </div>
+    </form>
   </div>
   );
 };
