@@ -1,3 +1,3 @@
 # Let's start the site
 
-https://strongquiet.github.io/content
+https://strongquiet.github.io/verbatim
